@@ -3,7 +3,7 @@
 ;; Author: kumar8600 <kumar8600@gmail.com>
 ;; URL: https://github.com/kumar8600/flycheck-clangcheck
 ;; Version: 0.21
-;; Package-Requires: ((cl-lib "0.5") (seq "1.7") (flycheck "0.17"))
+;; Package-Requires: ((cl-lib "0.5") (seq "1.7") (flycheck "0.31"))
 		   
 ;; Copyright (c) 2015 by kumar8600 <kumar8600@gmail.com>
 
@@ -186,7 +186,8 @@ See URL `http://clang.llvm.org/docs/ClangCheck.html'."
 	    ": warning: " (message) line-end)
    (error line-start (file-name) ":" line ":" column
 	  ": " (or "fatal error" "error") ": " (message) line-end))
-  :modes (c-mode c++-mode))
+  :modes (c-mode c++-mode)
+  :stage syntax)
 
 (add-to-list 'flycheck-checkers 'c/c++-clangcheck)
 
